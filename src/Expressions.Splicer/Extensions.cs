@@ -19,13 +19,13 @@ namespace Nessos.Expressions.Splicer
 			{
 				var thunk = Expression.Lambda<Func<object>>(m.Arguments[0], new ParameterExpression[0]);
 				func = thunk.Compile().DynamicInvoke() as Expression;
+				args = Enumerable.Range(1, m.Arguments.Count - 1).Select(i => m.Arguments[i]).ToArray();
 			}
 			else
 			{
-				func = m.Arguments[0];
+				func = null;
+				args = null;
 			}
-
-			args = Enumerable.Range(1, m.Arguments.Count - 1).Select(i => m.Arguments[i]).ToArray();
 		}
 
 		public static TResult Invoke<TSource, TResult>(this Expression<Func<TSource, TResult>> f, TSource src)
