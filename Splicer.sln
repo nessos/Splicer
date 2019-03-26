@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5FDC5453-3A0C-45BC-B7FA-B5E9248257CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DDA8BBC0-03ED-4B56-84C5-0935B0991CBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A37BF2C7-98EE-4B51-9526-CBF8BEEA77AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expressions.Splicer", "src\Expressions.Splicer\Expressions.Splicer.csproj", "{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4} = {5FDC5453-3A0C-45BC-B7FA-B5E9248257CE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4120DCCF-BA30-489A-A867-AF876C1E5AC6}
+	EndGlobalSection
+EndGlobal

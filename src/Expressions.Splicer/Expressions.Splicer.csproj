@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Authors>Alexandros Kritikos;Nick Palladinos</Authors>
+    <Description>A simple expression Slicer that can generate LINQ to Entities compatible expressions</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <RepositoryUrl>https://github.com/nessos/Splicer</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/nessos/Splicer</PackageProjectUrl>
+    <PackageTags>Expressions;Slicer</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Label="Nugets">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+  </ItemGroup>
+</Project>
