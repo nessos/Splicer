@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/nessos/Splicer</RepositoryUrl>
     <PackageProjectUrl>https://github.com/nessos/Splicer</PackageProjectUrl>
     <PackageTags>Expressions;Slicer</PackageTags>
+    <PackageId>Nessos.Expressions.Splicer</PackageId>
   </PropertyGroup>
 
   <ItemGroup Label="Nugets">
