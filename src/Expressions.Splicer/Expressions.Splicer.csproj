@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Authors>Alexandros Kritikos;Nick Palladinos</Authors>
+    <Authors>Alexandros Kritikos;Nick.Palladinos</Authors>
     <Description>A simple expression Slicer that can generate LINQ to Entities compatible expressions</Description>
     <Copyright>Copyright 2019</Copyright>
     <RepositoryUrl>https://github.com/nessos/Splicer</RepositoryUrl>
