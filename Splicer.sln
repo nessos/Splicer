@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A37B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expressions.Splicer", "src\Expressions.Splicer\Expressions.Splicer.csproj", "{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combinators", "samples\Combinators\Combinators.csproj", "{0264A169-37A6-49E1-AA81-B3DCC3453CFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +23,17 @@ Global
 		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0264A169-37A6-49E1-AA81-B3DCC3453CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0264A169-37A6-49E1-AA81-B3DCC3453CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0264A169-37A6-49E1-AA81-B3DCC3453CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0264A169-37A6-49E1-AA81-B3DCC3453CFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7D05CD3A-A266-4F94-8C8F-E0E9DA86C1D4} = {5FDC5453-3A0C-45BC-B7FA-B5E9248257CE}
+		{0264A169-37A6-49E1-AA81-B3DCC3453CFC} = {A37BF2C7-98EE-4B51-9526-CBF8BEEA77AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4120DCCF-BA30-489A-A867-AF876C1E5AC6}
