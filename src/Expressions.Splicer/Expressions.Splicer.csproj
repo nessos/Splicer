@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
@@ -11,6 +12,9 @@
     <RepositoryUrl>https://github.com/nessos/Splicer</RepositoryUrl>
     <PackageProjectUrl>https://github.com/nessos/Splicer</PackageProjectUrl>
     <PackageTags>Expressions;Slicer</PackageTags>
+    <PackageId>Nessos.Expressions.Splicer</PackageId>
+    <Version>1.0.2</Version>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup Label="Nugets">
