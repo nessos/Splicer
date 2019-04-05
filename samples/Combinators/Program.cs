@@ -1,8 +1,10 @@
 using System;
+using System.Linq;
 using System.Linq.Expressions;
 using Nessos.Expressions.Splicer;
 
-namespace Combinators
+
+namespace Nessos.Sample
 {
 	class Program
 	{
@@ -31,8 +33,13 @@ namespace Combinators
 		static void Main(string[] args)
 		{
 
-			Console.WriteLine(Pow(3).Splice());
-			
+			//Console.WriteLine(Pow(3).Splice());
+			var source = Enumerable.Range(1, 100).ToArray();
+			var result = 
+				source.Of()
+					  .Where(x => x % 2 == 0)
+					  .Select(x => 2 * x)
+					  .Sum();
 			
 		}
 	}
