@@ -28,7 +28,10 @@ namespace Nessos.Expressions.Splicer
 			}
 		}
 
-		public static TResult Invoke<TSource, TResult>(this Expression<Func<TSource, TResult>> f, TSource src)
+        public static TResult Invoke<TResult>(this Expression<Func<TResult>> f)
+            => throw new Exception("Stump call");
+
+        public static TResult Invoke<TSource, TResult>(this Expression<Func<TSource, TResult>> f, TSource src)
 			=> throw new Exception("Stump call");
 
 		public static TResult Invoke<TSource0, TSource1, TResult>(
@@ -37,7 +40,11 @@ namespace Nessos.Expressions.Splicer
 			TSource1 src1)
 			=> throw new Exception("Stump call");
 
-		public static Expression<Func<TSource, TResult>> Splice<TSource, TResult>(
+        public static Expression<Func<TResult>> Splice<TResult>(
+            this Expression<Func<TResult>> lambda)
+            => Splicer.Visit(lambda) as Expression<Func<TResult>>;
+
+        public static Expression<Func<TSource, TResult>> Splice<TSource, TResult>(
 			this Expression<Func<TSource, TResult>> lambda)
 			=> Splicer.Visit(lambda) as Expression<Func<TSource, TResult>>;
 	}
