@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Nessos.Expressions.Splicer;
@@ -32,15 +33,15 @@ namespace Nessos.Sample
 
 		static void Main(string[] args)
 		{
-
-			//Console.WriteLine(Pow(3).Splice());
-			var source = Enumerable.Range(1, 100).ToArray();
-			var result = 
-				source.Of()
-					  .Where(x => x % 2 == 0)
-					  .Select(x => 2 * x)
-					  .Sum();
+			Func<Expression<Func<IEnumerable<int>>>, Expression<Func<int>>> f =
+				source => source.Of()
+								.Where(x => x % 2 == 0)
+								.Select(x => 2 * x)
+								.Sum();
 			
+			var _f = f.Compile();
+			var arr = Enumerable.Range(1, 100).ToArray();
+			Console.WriteLine(_f(arr));
 		}
 	}
 }
