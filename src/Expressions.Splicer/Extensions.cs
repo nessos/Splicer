@@ -1,6 +1,7 @@
 namespace Nessos.Expressions.Splicer
 {
 	using System;
+	using System.Collections.Generic;
 	using System.Linq;
 	using System.Linq.Expressions;
 
@@ -26,6 +27,12 @@ namespace Nessos.Expressions.Splicer
 				func = null;
 				args = null;
 			}
+		}
+
+		public static List<T> Append<T>(this List<T> xs, T x)
+		{
+			xs.Add(x);
+			return xs;
 		}
 
 		public static Func<T, R> Compile<T, R>(this Func<Expression<Func<T>>, Expression<Func<R>>> f)

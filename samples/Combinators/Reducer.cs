@@ -7,8 +7,10 @@ using Nessos.Expressions.Splicer;
 
 namespace Nessos.Sample
 {
+	
 	public abstract class Reducer<T>
 	{
+		// (forall R. (T -> R -> R) -> R -> R)
 		public abstract Expression<Func<R>> Apply<R>(Expression<Func<R, T, R>> f, Expression<Func<R>> seed);
 	}
 
@@ -22,7 +24,7 @@ namespace Nessos.Sample
 
         public override Expression<Func<R>> Apply<R>(Expression<Func<R, T, R>> f, Expression<Func<R>> seed)
         {
-            return () => source.Invoke().Aggregate(seed.Invoke(), (acc, x) => f.Invoke(acc, x));
+			return () => source.Invoke().Aggregate(seed.Invoke(), (acc, x) => f.Invoke(acc, x));
         }
     }
 
@@ -74,5 +76,12 @@ namespace Nessos.Sample
 
 		public static Expression<Func<int>> Sum(this Reducer<int> source) =>
 			source.Aggregate(() => 0, (acc, x) => acc + x);
+
+		public static Expression<Func<int>> Length(this Reducer<int> source) =>
+			source.Aggregate(() => 0, (acc, x) => acc + 1);
+
+		public static Expression<Func<List<T>>> ToList<T>(this Reducer<T> source)
+			=> source.Aggregate(() => new List<T>(), (acc, x) => acc.Append(x));
+		
 	}
 }
