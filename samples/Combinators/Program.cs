@@ -22,7 +22,7 @@ namespace Nessos.Sample
 			}
 		}
 
-		public void OrExample()
+		public static void OrExample()
 		{
 			var ors =
 				Expr.False<string>()
@@ -32,10 +32,9 @@ namespace Nessos.Sample
 			Console.WriteLine(ors);
 		}
 
-		static void Main(string[] args)
+		public static void ReducerExample()
 		{
-
-			Func<IEnumerable<int>, int> g = 
+			Func<IEnumerable<int>, int> g =
 				source =>
 				source
 					.Where(x => x % 2 == 0)
@@ -55,7 +54,7 @@ namespace Nessos.Sample
 								.Select(x => x * 2)
 								.Select(x => x * 2)
 								.Aggregate(() => 0, (acc, x) => acc + x);
-			
+
 			var _f = f.Compile();
 			var arr = Enumerable.Range(1, 100000000).ToArray();
 
@@ -71,6 +70,19 @@ namespace Nessos.Sample
 
 			Console.WriteLine(x1);
 			Console.WriteLine(watch.Elapsed);
+		}
+
+		public static void OptimizeExample()
+		{
+			Expression<Func<int, int>> f = x => 0 + x * 1;
+			var _f = f.Optimize();
+			Console.WriteLine($"Optimize {_f}");
+		}
+
+
+		static void Main(string[] args)
+		{
+			OptimizeExample();
 		}
 	}
 }

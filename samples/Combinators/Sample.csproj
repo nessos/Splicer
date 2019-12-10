@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Kritikos.Expressions.Deconstructor" Version="0.3.0-alpha.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Expressions.Splicer\Expressions.Splicer.csproj" />
   </ItemGroup>
 
