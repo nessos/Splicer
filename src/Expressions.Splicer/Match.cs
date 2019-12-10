@@ -24,7 +24,7 @@ namespace Nessos.Expressions.Splicer
 				Result = f(node, expr =>
 				{
 					//Console.WriteLine($"k {expr}");
-					var _expr = base.Visit(expr);
+					var _expr = (node == expr) ? base.Visit(expr) : this.Visit(expr);
 					if (typeof(R) == typeof(Expression))
 						Result = (R)(object)_expr;
 					return this.Result;
