@@ -18,7 +18,7 @@ namespace Nessos.Expressions.Splicer
 			name = m.Method.Name;
 			if (name == "Invoke")
 			{
-				var thunk = Expression.Lambda<Func<object>>(m.Arguments[0], new ParameterExpression[0]);
+				var thunk = Expression.Lambda<Func<object>>(m.Arguments[0], Array.Empty<ParameterExpression>());
 				func = thunk.Compile().DynamicInvoke() as Expression;
 				args = Enumerable.Range(1, m.Arguments.Count - 1).Select(i => m.Arguments[i]).ToArray();
 			}
@@ -43,21 +43,21 @@ namespace Nessos.Expressions.Splicer
 			return _lambda.Compile();
 		}
 
-        public static TResult Invoke<TResult>(this Expression<Func<TResult>> f)
-            => throw new Exception("Stump call");
+		public static TResult Invoke<TResult>(this Expression<Func<TResult>> f)
+			=> throw new NotImplementedException("Stump call");
 
-        public static TResult Invoke<TSource, TResult>(this Expression<Func<TSource, TResult>> f, TSource src)
-			=> throw new Exception("Stump call");
+		public static TResult Invoke<TSource, TResult>(this Expression<Func<TSource, TResult>> f, TSource src)
+			=> throw new NotImplementedException("Stump call");
 
 		public static TResult Invoke<TSource0, TSource1, TResult>(
 			this Expression<Func<TSource0, TSource1, TResult>> f, TSource0 src0, TSource1 src1)
-			=> throw new Exception("Stump call");
+			=> throw new NotImplementedException("Stump call");
 
-        public static Expression<Func<TResult>> Splice<TResult>(
-            this Expression<Func<TResult>> lambda)
-            => Splicer.Visit(lambda) as Expression<Func<TResult>>;
+		public static Expression<Func<TResult>> Splice<TResult>(
+			this Expression<Func<TResult>> lambda)
+			=> Splicer.Visit(lambda) as Expression<Func<TResult>>;
 
-        public static Expression<Func<TSource, TResult>> Splice<TSource, TResult>(
+		public static Expression<Func<TSource, TResult>> Splice<TSource, TResult>(
 			this Expression<Func<TSource, TResult>> lambda)
 			=> Splicer.Visit(lambda) as Expression<Func<TSource, TResult>>;
 	}
